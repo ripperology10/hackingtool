@@ -68,13 +68,13 @@ print(Fore.BLUE+r"""
             The Punisher.
 """+Style.RESET_ALL)
 
-class.shell(cmd.cmd):
+class.shell(cmd.Cmd):
     prompt = '$:'
     #########################################################
     #-----Dexter.py----------------#                        #
     #=Enumerations and Forensics.  #                        #
     #########################################################
-    def do-dexter(self, line):                              #
+    def do_dexter(self, line):                              #
         args = line.split('-');                             #
         for arg in args:                                    #
             print(arg);                                     #
