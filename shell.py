@@ -68,7 +68,7 @@ print(Fore.BLUE+r"""
             The Punisher.
 """+Style.RESET_ALL)
 
-class.shell(cmd.Cmd):
+class shell(cmd.Cmd):
     prompt = '$:'
     #########################################################
     #-----Dexter.py----------------#                        #
