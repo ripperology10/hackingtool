@@ -88,7 +88,7 @@ class.shell(cmd.Cmd):
         sherlock_logo();                                                                    #
         args = line.split();                                                                #
         for arg in args:                                                                    #
-            if "vuln_scan": in arg:                                                         #
+            if "vuln_scan:": in arg:                                                         #
                 comment = args[args.index("vuln_scan:")+1];                                 #
                 arg = arg.replace("vuln_scan:", "");                                        #
                 xss_scan(comment);                                                          #
