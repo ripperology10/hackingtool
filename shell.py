@@ -43,7 +43,8 @@ def xss_scan(url, headers):
     except:
       print("This tool can't detect DOM yet, it's in it's early form at best.);
             
-            
+
+def lfi_scan(url, headers):
 #######################################################################################################################  
 #                Page 1
 ####################################################################################################################### 
@@ -88,10 +89,23 @@ class shell(cmd.Cmd):
         sherlock_logo();                                                                    #
         args = line.split();                                                                #
         for arg in args:                                                                    #
-            if "vuln_scan:": in arg:                                                         #
+            if "vuln_scan:": in arg:                                                        #
                 comment = args[args.index("vuln_scan:")+1];                                 #
-                arg = arg.replace("vuln_scan:", "");                                        #
-                xss_scan(comment);                                                          #
+                headers = None; dicts = {};                                                 #
+                try:                                                                        #
+                  headers = arg[args.index(comment)+1];                                     #
+                  headers = headers.split(",");                                             #
+                                                                                            #
+                  for i in headers:                                                         #
+                    i = i.replace("{", ""); i = i.replace("}", "");                         #
+                    i = i.replace("'", ""); i = i.replace("'", "");                         #
+                    i = i.split(":");                                                       #
+                    dicts = [i[0]] = i[1];                                                  #
+                except:                                                                     #
+                  print("Found no headers sir.");                                           #
+                if headers != None:                                                         #
+                   arg = arg.replace("vuln_scan:", "");                                     #
+                   xss_scan(comment);                                                       #
     #########################################################################################
             #--Port Scanning                   #
             #################################################################################
