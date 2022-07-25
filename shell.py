@@ -45,6 +45,11 @@ def xss_scan(url, headers):
             
 
 def lfi_scan(url, headers):
+    browser = mechanicalsoup.Browser();
+    page = browser.get(url+"../../etc/passwd",headers=headers);
+    html = page.soup;
+    if "root:" in html.content.decode():
+        print(f"[*] LFI Detected on {url}");
 #######################################################################################################################  
 #                Page 1
 ####################################################################################################################### 
@@ -102,7 +107,7 @@ class shell(cmd.Cmd):
                     i = i.split(":");                                                       #
                     dicts = [i[0]] = i[1];                                                  #
                 except:                                                                     #
-                  print("Found no headers sir.");                                           #
+                    print("Found no headers sir.");                                           #
                 if headers != None:                                                         #
                    arg = arg.replace("vuln_scan:", "");                                     #
                    xss_scan(comment);                                                       #
