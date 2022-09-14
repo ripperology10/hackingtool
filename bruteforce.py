@@ -26,7 +26,6 @@ def PASSWORD_TEST(mail, password):
         return False
     return session.post(POST_URL, data=post_data, cookies=cookies, allow_redirects=False)
 
-#print(facebook_login("Samim C. Sulog", "ONLINE CLASSS SUCKS"));
 
 if __name__ == "__main__":
     password_data = open(CURRENT_PATH+SPECIFIED_WORDLIST).readlines();
