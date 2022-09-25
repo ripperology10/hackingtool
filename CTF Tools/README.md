@@ -1,5 +1,10 @@
 CTF Tools:
 
+Tips for manual Recon:
+Check the source code.
+Check the headers (burp suite or dev tools in browser)
+Check the robots.txt
+
 Reconaissance:
 Nmap <: Find open ports on your target
 Dirbuster/Gobuster <: Find hidden directories that might be useful (HTTP,HTTPS ONLY)
